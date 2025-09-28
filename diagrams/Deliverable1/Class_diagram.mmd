@@ -1,0 +1,100 @@
+classDiagram-v2
+    direction LR
+
+    %% === CLASSES ===
+    class Racer {
+        -racerID
+        -name
+        -email
+        -creditCardInfo
+        -currentCategory
+        +buyLicense(racerID : int, credit_card : int) : void
+        +makeAccount(racerID : int, credit_card : int) : void
+        +registerRace(cat : int, race : Race) : void
+        +cancelRace(race : Race) : void
+        +viewRaceResults(racerID : int, race : Race) : Result
+        +viewHistory(racerID : int, race : Race) : list~Race~
+    }
+
+    class License {
+        -licenseID
+        -category
+        -issueDate
+        -expirDate
+        +getCategory() : String
+        +categoryUp() : void
+        +renewLicense(racerID : int, credit_card : int) : void
+        +isExpired() : boolean
+    }
+
+    class Organizer {
+        -organiserID
+        -name
+        -email
+        +createRace() : void
+        +setResults(result : Result) : void
+    }
+
+    class Administrator {
+        -adminID
+        -name
+        -email
+        +deleteReview(racerID : int, review : Review) : void
+        +deleteAccount(racerID : int) : void
+    }
+
+    class Race {
+        -raceID
+        -name
+        -date
+        -miles
+        -route
+        -isOfficial
+        -participationLimit
+        -registrationDeadline
+        -racers[]
+        +displayRace() : String
+    }
+
+    class Result {
+        -resultID
+        -placement
+        -timeInSeconds
+        -category
+        +sendNotification(raceID : int) : String
+        +postPodium() : String
+        +postResults() : String
+    }
+
+    class Review {
+        -reviewID
+        -rating
+        -comment
+        -createdAt
+        +editReview(racerID : int, review : Review) : void
+    }
+
+    %% === ENUMS ===
+    class RaceType {
+        <<enumeration>>
+        roadRace
+        criterium
+        timeTrial
+        gravel
+    }
+
+    %% === ASSOCIATIONS (bidirectional where appropriate) ===
+    Racer "1" -- "0..1" License
+    Racer "1" -- "0..N" Result
+    Racer "1" -- "0..N" Review
+
+    Organizer "1" -- "0..N" Race
+
+    Race "1" -- "0..N" Result
+    Race "1" -- "0..N" Review
+
+
+    Administrator -- Racer : manages
+    Administrator -- License : manages
+
+    Race -- RaceType
