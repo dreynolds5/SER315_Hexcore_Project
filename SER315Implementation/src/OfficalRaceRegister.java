@@ -3,8 +3,6 @@ public class OfficalRaceRegister implements RaceRegister{
 
     @Override
     public String register(int category, Race race, Racer racer) {
-        //check if they are signed up with the system?
-
         //check if they have a valid license
         License license = racer.getRacerLicense();
         String date = String.valueOf(LocalDateTime.now());
@@ -16,7 +14,7 @@ public class OfficalRaceRegister implements RaceRegister{
         if (race.racers.contains(racer)) {
             return "Registration Failed: You are already registered for this race";
         }
-        
+
         //check if registration is still open
         String deadline = race.getRegistrationDeadline();
         if (date.compareTo(deadline) > 0) {
@@ -24,9 +22,11 @@ public class OfficalRaceRegister implements RaceRegister{
         }
 
         //check racers cat level
-        //TODO: cat level needs to be added to racer and race
-        //in order to show the race requirement and racers current level
-
+        int cat = license.getLicenseCategory();
+        if (cat != category) {
+            return "Registration Failed: Incorrect category";
+        }
+        
         //register racer
         race.racers.add(racer);
         return "Registration Successful";
