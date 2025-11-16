@@ -1,4 +1,4 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 public class UnofficalRaceRegister implements RaceRegister {
 
     @Override
@@ -9,7 +9,7 @@ public class UnofficalRaceRegister implements RaceRegister {
         }
         
         //check if registration is still open
-        String date = String.valueOf(LocalDateTime.now());
+        String date = String.valueOf(LocalDate.now());
         String deadline = race.getRegistrationDeadline();
         if (date.compareTo(deadline) > 0) {
             return "Registration Failed: Registration deadline has already passed";
