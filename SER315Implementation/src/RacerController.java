@@ -63,6 +63,10 @@ public class RacerController extends Observable {
         return null;
     }
 
+    public int getUserCategory(String name){
+        Racer racer = this.getRacer(name);
+        return racer.getRacerLicense().getLicenseCategory();
+    }
     public Racer getRacer(int id){
         for (Racer racer : racers){
             if(racer.getRacerId() == id){
