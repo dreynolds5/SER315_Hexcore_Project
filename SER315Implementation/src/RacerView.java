@@ -1,13 +1,22 @@
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Scanner;
 
 public class RacerView {
     private RacerController racerController = new RacerController();
+    Observer successfulRegistration = (Observer) new SuccessObserver();
+    Observer failedRegistration =  (Observer) new FailedObserver();
 
     public static void main(String[] args) {
         RacerView view = new RacerView();
+        view.initObservers();
         view.basePage();
     }
 
+    public void initObservers(){
+        this.racerController.addObserver(successfulRegistration);
+        this.racerController.addObserver(failedRegistration);
+    }
     public void basePage() {
         Scanner scanner = new Scanner(System.in);
         boolean loginStatus = false;
@@ -47,7 +56,7 @@ public class RacerView {
                 case 2: //register for a race
                     System.out.println("Enter raceID: ");
                     int raceID = scanner.nextInt();
-                    racerController.raceRegister(raceID,username);
+                    racerController.raceRegister(username,raceID);
                     break;
 
                 case 3: //log out
