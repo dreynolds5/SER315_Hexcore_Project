@@ -16,5 +16,5 @@ public interface Observer {
     *  a registration attempt succeeds or fail. 
     * -Concret class: SuccessObercer, FailObserver
     **/
-    void sentStatus(String message);
+    void sendStatus(String message);
 }

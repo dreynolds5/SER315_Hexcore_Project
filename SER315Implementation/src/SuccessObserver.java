@@ -17,7 +17,7 @@ public class SuccessObserver implements Observer {
     @Override
     public void sendStatus(String message){
       if(message.toLowerCase().contains("success") ){
-        system.out.printLin("Success Observer: " + message );
+        System.out.println("Success Observer: " + message );
       }
     }   
 }

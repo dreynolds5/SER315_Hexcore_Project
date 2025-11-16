@@ -16,7 +16,7 @@ public class FailedObserver implements Observer {
     @Override
     public void sendStatus(String message){
       if(message.toLowerCase().contains("fail") ){
-        system.out.printLin("Fail Observer: " + message );
+        System.out.println("Fail Observer: " + message );
       }
     }   
 }

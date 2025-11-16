@@ -9,6 +9,7 @@ public class RacerController extends Observable {
     private String registrationState;
 
 
+
     public RacerController() {
         racers = new ArrayList<>();
         races = new ArrayList<>();
@@ -22,6 +23,15 @@ public class RacerController extends Observable {
         registrationState = "";
     }
 
+
+    public boolean login(String name, String password) {
+        for (Racer racer : racers) {
+            if(racer.getRacerName().equals(name) && racer.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public void raceRegister(int category, Race race, Racer racer){
         setData(raceRegisterStrategy.register(category, race, racer));
     }
