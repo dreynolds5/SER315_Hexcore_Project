@@ -1,11 +1,11 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 public class OfficalRaceRegister implements RaceRegister{
 
     @Override
     public String register(int category, Race race, Racer racer) {
         //check if they have a valid license
         License license = racer.getRacerLicense();
-        String date = String.valueOf(LocalDateTime.now());
+        String date = String.valueOf(LocalDate.now());
         if (license.isExpired(date)) {
             return "Registration Failed: License is expired";
         }
