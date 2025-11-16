@@ -30,7 +30,11 @@ public class RacerController extends Observable {
         }
         return false;
     }
-    public void raceRegister(int category, Race race, Racer racer){
+    public void raceRegister(String username, int raceId, int category){
+        Race race = this.getRace(raceId);
+        Racer racer = this.getRacer(username);
+        this.setRaceRegisterStrategy(race);
+
         setData(raceRegisterStrategy.register(category, race, racer));
     }
 
@@ -62,6 +66,14 @@ public class RacerController extends Observable {
     public Racer getRacer(int id){
         for (Racer racer : racers){
             if(racer.getRacerId() == id){
+                return racer;
+            }
+        }
+        return null;
+    }
+    public Racer getRacer(String name){
+        for (Racer racer : racers){
+            if(racer.getRacerName().equals(name)){
                 return racer;
             }
         }
