@@ -10,7 +10,7 @@ public class Racer {
         this.racerName = racerName;
         this.racerEmail = racerEmail;
         this.password = password;
-        racerLicense = new License(racerId, 1, "05172025","05172026");
+        racerLicense = new License(racerId, 3, "2025-05-17","2026-05-17");
     }
 
     public int getRacerId() {

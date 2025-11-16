@@ -8,16 +8,14 @@ public class RacerController extends Observable {
     private RaceRegister raceRegisterStrategy;
     private String registrationState;
 
-
-
     public RacerController() {
         racers = new ArrayList<>();
         races = new ArrayList<>();
         racers.add(new Racer(101, "Alex Morgan", "alex.morgan@example.com", "FastR4cer!"));
         racers.add(new Racer(102, "Shawn Morgan", "shawn.morgan@example.com", "Fast3rR4cer!"));
 
-        races.add(new Race(201, "Desert Dash Classic","12252025", 26.2, "Red Rock Canyon Loop", "criterium", true, 250, "11252025"));
-        races.add(new Race(202, "Sunset Fun Ride","11262025", 10.5, "Lakeside Trail Route", "Road Race", false, 100, "10262025"));
+        races.add(new Race(201, "Desert Dash Classic","2025-12-25", 26.2, "Red Rock Canyon Loop", "criterium", true, 250, "2025-11-25"));
+        races.add(new Race(202, "Sunset Fun Ride","2026-1-17", 10.5, "Lakeside Trail Route", "Road Race", false, 100, "2026-1-17"));
 
         raceRegisterStrategy = null;
         registrationState = "";
