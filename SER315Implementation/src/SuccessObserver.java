@@ -9,6 +9,7 @@ public class SuccessObserver implements Observer {
     *Concrete Oberver in the Observer Designn Pattern. 
     *This class listens for status updates from the RacerController
     *It reacts only to successful regiestration messages.
+    *
     *Note: 
     *-Implements Observer interface.
     *-Prints a message when the racer failed to register
