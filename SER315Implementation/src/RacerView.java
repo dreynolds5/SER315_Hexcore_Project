@@ -3,7 +3,7 @@ import java.util.Observer;
 import java.util.Scanner;
 
 public class RacerView {
-    private RacerController racerController = new RacerController();
+    RacerController racerController = new RacerController();
     Observer successfulRegistration = (Observer) new SuccessObserver();
     Observer failedRegistration =  (Observer) new FailedObserver();
 
@@ -41,12 +41,14 @@ public class RacerView {
     public void homePage(String username) {
         Scanner scanner = new Scanner(System.in);
         boolean inHomePage = true;
+        int cat;
 
         while(inHomePage) {
             System.out.println("Enter 1 to find races");
             System.out.println("Enter 2 to register for race");
-            System.out.println("Enter 3 to log out");
-            System.out.println("Enter 4 to exit");
+            System.out.println("Enter 3 to view current category");
+            System.out.println("Enter 4 to log out");
+            System.out.println("Enter 5 to exit");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -56,14 +58,19 @@ public class RacerView {
                 case 2: //register for a race
                     System.out.println("Enter raceID: ");
                     int raceID = scanner.nextInt();
-                    racerController.raceRegister(username,raceID);
+                    System.out.println("Enter your current category: ");
+                    cat = scanner.nextInt();
+                    racerController.raceRegister(cat,username,raceID);
                     break;
-
-                case 3: //log out
+                case 3:
+                    cat = racerController.getUserCategory(username);
+                    System.out.println("Current Category: " + cat);
+                    break;
+                case 4: //log out
                     System.out.println("logging out");
                     inHomePage = false;
                     break;
-                case 4: //exit system
+                case 5: //exit system
                     System.exit(0);
                     break;
                 default: //invalid choice
@@ -73,4 +80,6 @@ public class RacerView {
         }
     }
 }
+
+
 
