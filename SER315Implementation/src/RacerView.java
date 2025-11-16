@@ -60,7 +60,7 @@ public class RacerView {
                     int raceID = scanner.nextInt();
                     System.out.println("Enter your current category: ");
                     cat = scanner.nextInt();
-                    racerController.raceRegister(cat,username,raceID);
+                    racerController.raceRegister(username,raceID,cat);
                     break;
                 case 3:
                     cat = racerController.getUserCategory(username);
