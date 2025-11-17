@@ -37,6 +37,13 @@ public class Race {
         return displayRace.toString();
     }
 
+    public String displayRaceSummary(){
+        StringBuilder displayRace = new StringBuilder();
+        displayRace.append("|Race ID: " + raceID + "\n");
+        displayRace.append("|Race Name: " + name + "\n");
+        return displayRace.toString();
+    }
+
     public void addRacer(Racer racer) {
         racers.add(racer);
     }

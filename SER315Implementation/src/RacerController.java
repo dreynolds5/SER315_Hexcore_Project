@@ -47,6 +47,14 @@ public class RacerController{
         return racesString;
     }
 
+    public String showRaceSummary(){
+        String racesString = "";
+        for (Race race : races){
+            racesString = racesString + race.displayRaceSummary() + "\n";
+        }
+        return racesString;
+    }
+
     public void setRaceRegisterStrategy(Race race){
         if (race.isOfficial()){
             raceRegisterStrategy = new OfficalRaceRegister();
