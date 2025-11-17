@@ -27,6 +27,7 @@ public class RacerView {
             System.out.println("2: exit");
             System.out.println("Enter your choice\n");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch(choice) {
                 case 1: //log in
@@ -58,8 +59,8 @@ public class RacerView {
         while(inHomePage) {
             System.out.println("1: to find races");
             System.out.println("2: to register for race");
-            System.out.println("4: to log out");
-            System.out.println("5: to exit");
+            System.out.println("3: to log out");
+            System.out.println("4: to exit");
             System.out.println("Enter your choice\n");
             int choice = scanner.nextInt();
 
@@ -71,7 +72,6 @@ public class RacerView {
                     System.out.println(racerController.showRaceSummary());
                     System.out.println("Enter raceID: ");
                     int raceID = scanner.nextInt();
-                    System.out.println("Enter your current category: ");
                     cat = racerController.getUserCategory(username);
                     racerController.raceRegister(username,raceID,cat);
                     break;
