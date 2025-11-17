@@ -30,7 +30,6 @@ public class RacerView {
             loginStatus = racerController.login(username, password);
             if (loginStatus) {
                 homePage(username);
-                break; 
             } else {
                 System.out.println("Login Failed.");
             }
@@ -52,7 +51,7 @@ public class RacerView {
 
             switch (choice) {
                 case 1: //show all races
-                    racerController.showRaces();
+                    System.out.println(racerController.showRaces());
                     break;
                 case 2: //register for a race
                     System.out.println("Enter raceID: ");

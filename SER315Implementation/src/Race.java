@@ -27,13 +27,13 @@ public class Race {
 
     public String displayRace() {
         StringBuilder displayRace = new StringBuilder();
-        displayRace.append("|Race ID: " + raceID);
-        displayRace.append("|Race Name: " + name);
-        displayRace.append("|Race Date: " + date);
-        displayRace.append("|Race Miles: " + miles);
-        displayRace.append("|Race Route: " + route);
-        displayRace.append("|Race Official: " + isOfficial);
-        displayRace.append("|Race Registration Deadline: " + registrationDeadline);
+        displayRace.append("|Race ID: " + raceID + "\n");
+        displayRace.append("|Race Name: " + name + "\n");
+        displayRace.append("|Race Date: " + date + "\n");
+        displayRace.append("|Race Miles: " + miles + "\n");
+        displayRace.append("|Race Route: " + route + "\n");
+        displayRace.append("|Race Official: " + isOfficial + "\n");
+        displayRace.append("|Race Registration Deadline: " + registrationDeadline + "\n");
         return displayRace.toString();
     }
 
