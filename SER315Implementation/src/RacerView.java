@@ -1,11 +1,10 @@
 import java.util.Observable;
-import java.util.Observer;
 import java.util.Scanner;
 
 public class RacerView {
     RacerController racerController = new RacerController();
-    Observer successfulRegistration = (Observer) new SuccessObserver();
-    Observer failedRegistration =  (Observer) new FailedObserver();
+    Observer successfulRegistration = new SuccessObserver();
+    Observer failedRegistration =  new FailedObserver();
 
     public static void main(String[] args) {
         RacerView view = new RacerView();

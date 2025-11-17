@@ -1,16 +1,17 @@
 import java.util.ArrayList;
-import java.util.Observable;
 
 
-public class RacerController extends Observable {
+public class RacerController{
     private ArrayList<Racer> racers;
     private ArrayList<Race> races;
+    private ArrayList<Observer> observers;
     private RaceRegister raceRegisterStrategy;
     private String registrationState;
 
     public RacerController() {
         racers = new ArrayList<>();
         races = new ArrayList<>();
+        observers = new ArrayList<>();
         racers.add(new Racer(101, "Alex Morgan", "alex.morgan@example.com", "FastR4cer!"));
         racers.add(new Racer(102, "Shawn Morgan", "shawn.morgan@example.com", "Fast3rR4cer!"));
 
@@ -92,9 +93,21 @@ public class RacerController extends Observable {
         // Only notify observers if the data has actually changed
         if (!newRegistrationState.equals(this.registrationState)) {
             this.registrationState = newRegistrationState;
-            setChanged(); // Mark the Observable object as having been changed
             notifyObservers(this.registrationState); // Notify all registered observers
         }
     }
 
+    public void addObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    public void notifyObservers(String state) {
+        for (Observer observer : observers) {
+            observer.sendStatus(state);
+        }
+    }
 }
