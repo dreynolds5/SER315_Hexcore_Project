@@ -7,6 +7,11 @@ public class UnofficalRaceRegister implements RaceRegister {
         if (race.racers.contains(racer)) {
             return "Registration Failed: You are already registered for this race.";
         }
+
+        //check if the participation limit has been reached
+        if (race.getNumRacers() == race.getParticipationLimit()) {
+            return "Registration Failed: No more slots left";
+        }
         
         //check if registration is still open
         String date = String.valueOf(LocalDate.now());
