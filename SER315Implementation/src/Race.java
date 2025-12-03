@@ -52,6 +52,10 @@ public class Race {
         return raceID;
     }
 
+    public int getNumRacers(){
+        return racers.size();
+    }
+
     public void setRaceID(int raceID) {
         this.raceID = raceID;
     }
