@@ -9,7 +9,7 @@ public class UnofficalRaceRegister implements RaceRegister {
         }
 
         //check if the participation limit has been reached
-        if (race.getNumRacers() == race.getParticipationLimit()) {
+        if (race.getNumRacers() >= race.getParticipationLimit()) {
             return "Registration Failed: No more slots left";
         }
         
