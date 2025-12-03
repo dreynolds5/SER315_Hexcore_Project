@@ -10,6 +10,11 @@ public class OfficalRaceRegister implements RaceRegister{
             return "Registration Failed: License is expired";
         }
 
+        //check if the participation limit has been reached
+        if (race.getNumRacers() == race.getParticipationLimit()) {
+            return "Registration Failed: No more slots left";
+        }
+
         //check if they are already registered to the race
         if (race.racers.contains(racer)) {
             return "Registration Failed: You are already registered for this race";
