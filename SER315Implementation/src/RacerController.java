@@ -12,8 +12,8 @@ public class RacerController{
         racers = new ArrayList<>();
         races = new ArrayList<>();
         observers = new ArrayList<>();
-        racers.add(new Racer(101, "Alex Morgan", "alex.morgan@example.com", "FastR4cer!"));
-        racers.add(new Racer(102, "Shawn Morgan", "shawn.morgan@example.com", "Fast3rR4cer!"));
+        racers.add(new Racer(101, "Alex_Morgan", "alex.morgan@example.com", "FastR4cer!"));
+        racers.add(new Racer(102, "Shawn_Morgan", "shawn.morgan@example.com", "Fast3rR4cer!"));
 
         races.add(new Race(201, "Desert Dash Classic","2025-12-25", 26.2, "Red Rock Canyon Loop", "criterium", true, 250, "2025-11-25"));
         races.add(new Race(202, "Sunset Fun Ride","2026-1-17", 10.5, "Lakeside Trail Route", "Road Race", false, 100, "2026-1-17"));

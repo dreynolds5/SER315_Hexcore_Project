@@ -31,7 +31,7 @@ public class RacerView {
 
             switch(choice) {
                 case 1: //log in
-                    System.out.println("Enter username to login:");
+                    System.out.println("Enter name to login:");
                     String username = scanner.nextLine();
 
                     System.out.println("Enter password to finish logging in:");
