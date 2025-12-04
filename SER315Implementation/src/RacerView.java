@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Observable;
 import java.util.Scanner;
 
@@ -25,12 +26,11 @@ public class RacerView {
         while (true) {
             System.out.println("1: log in");
             System.out.println("2: exit");
-            System.out.println("Enter your choice\n");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            System.out.println("Enter your choice:");
+            String choice = scanner.nextLine();
 
             switch(choice) {
-                case 1: //log in
+                case "1": //log in
                     System.out.println("Enter name to login:");
                     String username = scanner.nextLine();
 
@@ -44,7 +44,7 @@ public class RacerView {
                         System.out.println("Login Failed.");
                     }
                     break;
-                case 2: //exit system
+                case "2": //exit system
                     System.exit(0);
             }
 
@@ -61,25 +61,38 @@ public class RacerView {
             System.out.println("2: to register for race");
             System.out.println("3: to log out");
             System.out.println("4: to exit");
-            System.out.println("Enter your choice\n");
-            int choice = scanner.nextInt();
+            System.out.println("Enter your choice:");
+            String choice = scanner.nextLine();
 
             switch (choice) {
-                case 1: //show all races
+                case "1": //show all races
                     System.out.println(racerController.showRaces());
                     break;
-                case 2: //register for a race
-                    System.out.println(racerController.showRaceSummary());
-                    System.out.println("Enter raceID: ");
-                    int raceID = scanner.nextInt();
-                    cat = racerController.getUserCategory(username);
-                    racerController.raceRegister(username,raceID,cat);
+                case "2": //register for a race
+                    int raceID;
+                    boolean invalid = true;
+                    while(invalid) {
+                        System.out.println(racerController.showRaceSummary());
+                        System.out.println("Enter raceID: ");
+                        try {
+                            raceID = scanner.nextInt();
+                            scanner.nextLine();
+                            cat = racerController.getUserCategory(username);
+                            racerController.raceRegister(username, raceID, cat);
+                            invalid = false;
+                        }
+                        catch (InputMismatchException e) {
+                            System.out.println("Please enter a valid race ID");
+                            scanner.nextLine();
+                        }
+
+                    }
                     break;
-                case 3: //log out
+                case "3": //log out
                     System.out.println("logging out");
                     inHomePage = false;
                     break;
-                case 4: //exit system
+                case "4": //exit system
                     System.exit(0);
                     break;
                 default: //invalid choice
