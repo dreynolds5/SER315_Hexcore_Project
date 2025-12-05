@@ -17,10 +17,16 @@ The System Implements:
 ## How to Run the Program
 
     *RacerView Class
-         User name:
+         User 1 Name:
             - Alex_Morgan
          Password:
             - FastR4cer!
+            
+         User 2 Name:
+            - Shawn_Morgan
+         Password:
+            - Fast3rR4cer!
+            
   
 
    ## How the Observer Output Work
