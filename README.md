@@ -33,12 +33,9 @@ The System Implements:
          Password:
             - Fast3rR4cer!
             
-  
-
    ## How the Observer Output Work
-  
   ### Log-in
-      Example:
+
         1: log in
         2: exit
         Enter your choice:
@@ -47,77 +44,64 @@ The System Implements:
         Alex_Morgan
         Enter password to finish logging in:
         FastR4cer!
-        1: to find races
-        2: to register for race
-        3: to log out
-        4: to exit
-        Enter your choice:
    
    ### Successful Registration 
-      Occurs when a racer registers for a race they are not already in.
-
-      Example:
-        1: to find races
-        2: to register for race
-        3: to log out
-        4: to exit
-        Enter your choice:
-        2
-        |Race ID: 201
-        |Race Name: Desert Dash Classic
-        
-        |Race ID: 202
-        |Race Name: Sunset Fun Ride
-        
-        
-        Enter raceID: 
-        202
-        Registration Successful: Registration Successful
-
+        what it means:
+          -the racer entered a valied username and password.
+        what the system does:
+          -Grants access to the main manu
+          -Allows the user to view races, register, logout, or exit.
+        Observer Behavior:
+          -displays notification message
+            -successful registration
+            -failis registration
+    
    ### Failed Registration
-        -Occurs when a racer registers for the same race twice. 
-        -Occurs when the race deadline has passed.
-        -Occurs when the race reaches its participation limit.
-      
-        Example 1: (deadline passed)
-          1: to find races
-          2: to register for race
-          3: to log out
-          4: to exit
-          Enter your choice:
-          2
-          |Race ID: 201
-          |Race Name: Desert Dash Classic
-          
-          |Race ID: 202
-          |Race Name: Sunset Fun Ride
-          
-          Enter raceID: 
-          201
-          Registration Failed: Registration deadline has already passed
-  
-        Example 2: (registers for the same race twice)
-            1: to find races
-            2: to register for race
-            3: to log out
-            4: to exit
-            Enter your choice:
-            2
-            |Race ID: 201
-            |Race Name: Desert Dash Classic
-            
-            |Race ID: 202
-            |Race Name: Sunset Fun Ride
-            
-            Enter raceID: 
-            202
-            Registration Failed: You are already registered for this race.
-  
-          Example 3:
-        
+     ## 1) Duplicate Registration
+        What it means:
+          -The racer tried to register for a race they already in.
+        what the system does:
+          - Blocks the registration
+          - Prevents duplicate entries
+        Observer Behavior:
+          -displays notification message
+            - Successful registratio
+            - Failis registration
+            - Keeps registration logic separate from the output messages 
 
+      ## 2) Deadline Passed
+        What it means:
+          - The racer attempted to register after the offical cutoff time.
+        what the system does:
+          - Provents late registration
+          - Enforces time frame to enter race using the Strategy Pattern
+        Observer Behavior:
+          - Fail notification message
+
+      ## 3) Race Full
+        What it means:
+          - The racer has reached its participation limit.
+        what the system does:
+          - Provents additional racers frin registering
+          - Enforces capacity
+        Observer Behavior:
+          - Fail notification message
+
+  ### Logout Outcomes
+      What it mean:
+        - The racer chooses to log out of the system.
+      What the system does:
+        - Ends the user session
+        -Returns to the login menu
+
+  ### Exit Outcome
+    What it means"
+      - The user chooses to fully exit the program.
+    What they system does:
+      -Safely terminates the application
+      -Ends all active sessions
      
-   ## Design Pattern Summary
+## Design Pattern Summary
    ### Strategy Pattern
       Controls how racers register depending on race type:
          -RaceRegister (interface)
