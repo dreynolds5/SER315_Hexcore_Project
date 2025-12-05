@@ -3,7 +3,7 @@ public class SuccessObserver implements Observer {
     /**
     * SuccessObserver
     * Author: Shiree T.
-    * Date: 11/15/2025
+    * Date: 12/04/2025
     *
     * Description:
     * Concrete Oberver in the Observer Designn Pattern. 
@@ -17,7 +17,7 @@ public class SuccessObserver implements Observer {
     @Override
     public void sendStatus(String message){
       if(message.toLowerCase().contains("success") ){
-        System.out.println("Success Observer: " + message );
+        System.out.println("Registration Successful: " + message );
       }
     }   
 }
