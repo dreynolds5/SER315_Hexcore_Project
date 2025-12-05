@@ -2,20 +2,19 @@
    **Design Pattern Used: Strategy & Observer
 
    ## Project Overview
-       This project is a console base Racer Registration System, that allows users to:
-      - Log in as a racer
-      - View available races
-      - Register for offical and unoffical races
-      - Recieves real time notification of a registration's success or failure
+      This project is a console base Racer Registration System, that allows users to:
+        - Log in as a racer
+        - View available races
+        - Register for offical and unoffical races
+        - Recieves real time notification of a registration's success or failure
 
 The System Implements:
    1) The Strategy Pattern:
-      Controls different race registration rules
+      - Controls different race registration rules.
    2) The Observer Pattern:
-      Displays registration result messages independently of the logic
+      - Displays registration result messages independently of the logic.
 
 ## How to Run the Program
-
 
 **Main entry point:** `RacerView` class  
 
@@ -46,74 +45,74 @@ The System Implements:
         FastR4cer!
    
    ### Successful Registration 
-        what it means:
-          -the racer entered a valied username and password.
-        what the system does:
-          -Grants access to the main manu
-          -Allows the user to view races, register, logout, or exit.
+        What it means:
+          - The racer entered a valied username and password.
+        What the system does:
+          - Grants access to the main manu
+          - Allows the user to view races, register, logout, or exit.
         Observer Behavior:
-          -displays notification message
-            -successful registration
-            -failis registration
+          - displays notification message
+            - successful registration
+            - failis registration
     
    ### Failed Registration
       1) Duplicate Registration
-        What it means:
-          -The racer tried to register for a race they already in.
-        what the system does:
-          - Blocks the registration
-          - Prevents duplicate entries
-        Observer Behavior:
-          -displays notification message
-            - Successful registratio
-            - Failis registration
-            - Keeps registration logic separate from the output messages 
+          What it means:
+            -The racer tried to register for a race they already in.
+          what the system does:
+            - Blocks the registration
+            - Prevents duplicate entries
+          Observer Behavior:
+            - Displays notification message
+              - Successful registratio
+              - Fails registration
+              - Keeps registration logic separate from the output messages 
 
        2) Deadline Passed
-        What it means:
-          - The racer attempted to register after the offical cutoff time.
-        what the system does:
-          - Provents late registration
-          - Enforces time frame to enter race using the Strategy Pattern
-        Observer Behavior:
-          - Fail notification message
+          What it means:
+            - The racer attempted to register after the offical cutoff time.
+          What the system does:
+            - Provents late registration
+            - Enforces time frame to enter race using the Strategy Pattern
+          Observer Behavior:
+            - Fail notification message
 
        3) Race Full
-        What it means:
-          - The racer has reached its participation limit.
-        what the system does:
-          - Provents additional racers frin registering
-          - Enforces capacity
-        Observer Behavior:
-          - Fail notification message
+          What it means:
+            - The racer has reached its participation limit.
+          what the system does:
+            - Provents additional racers frin registering
+            - Enforces capacity
+          Observer Behavior:
+            - Fail notification message
 
   ### Logout Outcomes
       What it mean:
         - The racer chooses to log out of the system.
       What the system does:
         - Ends the user session
-        -Returns to the login menu
+        - Returns to the login menu
 
   ### Exit Outcome
     What it means:
       - The user chooses to fully exit the program.
     What they system does:
-      -Safely terminates the application
-      -Ends all active sessions
+      - Safely terminates the application
+      - Ends all active sessions
      
 ## Design Pattern Summary
    ### Strategy Pattern
       Controls how racers register depending on race type:
-         -RaceRegister (interface)
-         -OfficalRaceRegister
-         -UnofficalRaceRegister
+         - RaceRegister (interface)
+         - OfficalRaceRegister
+         - UnofficalRaceRegister
 
    ### Observer Pattern
-      Send notification of Registration Output message
-         -Observer (interface)
-         -SuccessObserver
-         -FailedObserver
-         -RacerController (Subject)
+      Send notification of Registration Output message.
+         - Observer (interface)
+         - SuccessObserver
+         - FailedObserver
+         - RacerController (Subject)
 
 ## Key Class files
    1) RecerView
