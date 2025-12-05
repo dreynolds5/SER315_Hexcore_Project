@@ -57,7 +57,7 @@ The System Implements:
             -failis registration
     
    ### Failed Registration
-     ## 1) Duplicate Registration
+      1) Duplicate Registration
         What it means:
           -The racer tried to register for a race they already in.
         what the system does:
@@ -69,7 +69,7 @@ The System Implements:
             - Failis registration
             - Keeps registration logic separate from the output messages 
 
-      ## 2) Deadline Passed
+       2) Deadline Passed
         What it means:
           - The racer attempted to register after the offical cutoff time.
         what the system does:
@@ -78,7 +78,7 @@ The System Implements:
         Observer Behavior:
           - Fail notification message
 
-      ## 3) Race Full
+       3) Race Full
         What it means:
           - The racer has reached its participation limit.
         what the system does:
