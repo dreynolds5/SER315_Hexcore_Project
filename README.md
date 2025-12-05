@@ -71,8 +71,8 @@ The System Implements:
       - Observer interface
    9) SuccessObserver
       - Success message
-   10) FailedObserver 
-      - Failure message
+   10) FailedObserver
+       - Failed message
       
    _____________________________________________________________________________________________________________________
   
