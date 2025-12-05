@@ -95,7 +95,7 @@ The System Implements:
         -Returns to the login menu
 
   ### Exit Outcome
-    What it means"
+    What it means:
       - The user chooses to fully exit the program.
     What they system does:
       -Safely terminates the application
