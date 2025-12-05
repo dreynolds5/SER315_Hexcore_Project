@@ -16,13 +16,19 @@ The System Implements:
 
 ## How to Run the Program
 
-    *RacerView Class
-         User 1 Name:
+
+**Main entry point:** `RacerView` class  
+
+    Test users:
+    
+         **User 1*
+          Name:
             - Alex_Morgan
-         Password:
+          Password:
             - FastR4cer!
             
-         User 2 Name:
+         **User 2*
+          Name:
             - Shawn_Morgan
          Password:
             - Fast3rR4cer!
@@ -30,19 +36,86 @@ The System Implements:
   
 
    ## How the Observer Output Work
+  
+  ### Log-in
+      Example:
+        1: log in
+        2: exit
+        Enter your choice:
+        1
+        Enter name to login:
+        Alex_Morgan
+        Enter password to finish logging in:
+        FastR4cer!
+        1: to find races
+        2: to register for race
+        3: to log out
+        4: to exit
+        Enter your choice:
+   
    ### Successful Registration 
       Occurs when a racer registers for a race they are not already in.
 
       Example:
-      //TO DO: add in example. 
+        1: to find races
+        2: to register for race
+        3: to log out
+        4: to exit
+        Enter your choice:
+        2
+        |Race ID: 201
+        |Race Name: Desert Dash Classic
+        
+        |Race ID: 202
+        |Race Name: Sunset Fun Ride
+        
+        
+        Enter raceID: 
+        202
+        Registration Successful: Registration Successful
 
    ### Failed Registration
-      -Occurs when a racer registers for the same race twice. 
-      -Occurs when the race deadline has passed.
-      -Occurs when the race reaches its participation limit.
+        -Occurs when a racer registers for the same race twice. 
+        -Occurs when the race deadline has passed.
+        -Occurs when the race reaches its participation limit.
       
-      Example:
-     //TO DO: add in example
+        Example 1: (deadline passed)
+          1: to find races
+          2: to register for race
+          3: to log out
+          4: to exit
+          Enter your choice:
+          2
+          |Race ID: 201
+          |Race Name: Desert Dash Classic
+          
+          |Race ID: 202
+          |Race Name: Sunset Fun Ride
+          
+          Enter raceID: 
+          201
+          Registration Failed: Registration deadline has already passed
+  
+        Example 2: (registers for the same race twice)
+            1: to find races
+            2: to register for race
+            3: to log out
+            4: to exit
+            Enter your choice:
+            2
+            |Race ID: 201
+            |Race Name: Desert Dash Classic
+            
+            |Race ID: 202
+            |Race Name: Sunset Fun Ride
+            
+            Enter raceID: 
+            202
+            Registration Failed: You are already registered for this race.
+  
+          Example 3:
+        
+
      
    ## Design Pattern Summary
    ### Strategy Pattern
