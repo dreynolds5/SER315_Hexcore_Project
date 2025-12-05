@@ -6,13 +6,13 @@
       - Log in as a racer
       - View available races
       - Register for offical and unoffical races
-      - Recieves real time notification on registration's success or failure
+      - Recieves real time notification of a registration's success or failure
 
 The System Implements:
    1) The Strategy Pattern:
-      -Control different race registration rules
+      Controls different race registration rules
    2) The Observer Pattern:
-      -Displays registration result messages independently from the logic
+      Displays registration result messages independently of the logic
 
 ## How to Run the Program
 
