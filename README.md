@@ -1,3 +1,83 @@
+# SER315 Group Project - Racer Registration System
+   **Design Pattern Used: Strategy & Observer
+
+   ## Project Overview
+       This project is a console base Racer Registration System, that allows users to:
+      - Log in as a racer
+      - View available races
+      - Register for offical and unoffical races
+      - Recieves real time notification on registration's success or failure
+
+The System Implements:
+   1) The Strategy Pattern:
+      -Control different race registration rules
+   2) The Observer Pattern:
+      -Displays registration result messages independently from the logic
+
+## How to Run the Program
+
+    *RacerView Class
+         User name:
+            - Alex_Morgan
+         Password:
+            - FastR4cer!
+  
+
+   ## How the Observer Output Work
+   ### Successful Registration 
+      Occurs when a racer registers for a race they are not already in.
+
+      Example:
+      //TO DO: add in example. 
+
+   ### Failed Registration
+      -Occurs when a racer registers for the same race twice. 
+      -Occurs when the race deadline has passed.
+      -Occurs when the race reaches its participation limit.
+      
+      Example:
+     //TO DO: add in example
+     
+   ## Design Pattern Summary
+   ### Strategy Pattern
+      Controls how racers register depending on race type:
+         -RaceRegister
+         -OfficalRaceRegister
+         -UnofficalRaceRegister
+
+   ### Observer Pattern
+      Send notification of Registration Output message
+         -Observer (interface)
+         -SuccessObserver
+         -FailedObserver
+         -RacerController (Subject)
+
+## Key Class files
+   1) RecerView
+      - User interface
+   2) RacerController
+      - System logic and Observer
+   3) Race
+      - Race data
+   4) Racer 
+      - Racer data
+   5) RaceRegister
+      - Strategy interface
+   6) OfficalRaceRegister
+      - Offical race logic
+   7) UnofficalRaceRegister
+      - Unoffical race logic
+   8) Observer
+      - Observer interface
+   9) SuccessObserver
+      - Success message
+   10) FailedObserver 
+      - Failure message
+      
+   _____________________________________________________________________________________________________________________
+  
+
+
 # ASU SER315 Group Project Template
 
 Welcome to SER315's Group Project Template! This comprehensive template and
