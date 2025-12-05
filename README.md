@@ -41,7 +41,7 @@ The System Implements:
    ## Design Pattern Summary
    ### Strategy Pattern
       Controls how racers register depending on race type:
-         -RaceRegister
+         -RaceRegister (interface)
          -OfficalRaceRegister
          -UnofficalRaceRegister
 
